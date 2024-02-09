@@ -9,7 +9,7 @@ import lombok.*;
 @ToString
 @Builder
 public class TipoHabDto {
-    private Integer id_descripcion;
+    private Integer id_tipodeHab;
     private String t_descripcion;
     private String t_cama;
     private String t_almohada;

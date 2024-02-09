@@ -3,6 +3,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -21,4 +23,14 @@ public class ReservacionBean {
     private Date f_entrada;
     @Column(name = "f_salida", nullable = false)
     private Date f_salida;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "reservacionBean")
+    private Set<HabitacionBean> habitaciones = new HashSet<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id")
+    private UsuarioBean usuarioBean;
+
+    @OneToOne(mappedBy = "reservacionBean", cascade = CascadeType.ALL)
+    private HistorialBean historialBean;
 }

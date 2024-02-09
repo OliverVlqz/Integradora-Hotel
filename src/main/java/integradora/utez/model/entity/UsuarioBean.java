@@ -2,6 +2,9 @@ package integradora.utez.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -23,4 +26,11 @@ public class UsuarioBean {
     private String tipo_user;
     @Column(name = "recurrencia", nullable = false)
     private String recurrencia;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "usuarioBean")
+    private Set<HistorialBean> historialBeans = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "usuarioBean")
+    private Set<ReservacionBean> reservacionBeans = new HashSet<>();
+
 }

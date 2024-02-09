@@ -23,4 +23,12 @@ public class HabitacionBean {
     private String status;
     @Column(name = "descuento", nullable = false)
     private double descuento;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_reservacion")
+    private ReservacionBean reservacionBean;
+
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "id_tipohab")
+    private TipoHabBean tipoHabBean;
 }

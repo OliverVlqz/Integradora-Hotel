@@ -2,6 +2,9 @@ package integradora.utez.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -23,4 +26,9 @@ public class SpaBean {
     private String precio;
     @Column(name = "descuento", nullable = false)
     private Integer descuento;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "spaBean")
+    private Set<PaquetesBean> paquetesBeans = new HashSet<>();
+
+
 }

@@ -9,8 +9,8 @@ import java.util.Date;
 @NoArgsConstructor
 @ToString
 @Builder
-public class VentasDto {
-    private Integer id_ventas;
+public class HistorialDto {
+    private Integer id_Historial;
     private String nombre;
     private Date fecha;
     private String m_pago;
