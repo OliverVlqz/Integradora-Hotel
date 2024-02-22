@@ -14,4 +14,6 @@ public class ReservacionDto {
     private Integer id_reservacion;
     private Date f_entrada;
     private Date f_salida;
+
+    private Integer usuario_id;
 }

@@ -26,6 +26,8 @@ public class HistorialBean {
     private Date fecha;
     @Column(name = "m_pago", nullable = false)
     private String m_pago;
+    @Column(name = "paquete", nullable = false)
+    private String paquete;
     @Column(name = "total", nullable = false)
     private String total;
 

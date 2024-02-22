@@ -13,5 +13,4 @@ public class UsuarioDto {
     private String contrasena;
     private String tipo_user;
     private String recurrencia;
-
 }

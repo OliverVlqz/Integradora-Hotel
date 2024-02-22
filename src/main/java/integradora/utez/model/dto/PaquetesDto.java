@@ -1,5 +1,7 @@
 package integradora.utez.model.dto;
 
+import integradora.utez.model.entity.RestauranteBean;
+import integradora.utez.model.entity.SpaBean;
 import lombok.*;
 
 @Getter
@@ -13,5 +15,6 @@ public class PaquetesDto {
     private String nombre;
     private String descripcion;
     private String costo;
-
-}
+    private SpaBean spaBean;
+    private RestauranteBean restauranteBean;
+    }
